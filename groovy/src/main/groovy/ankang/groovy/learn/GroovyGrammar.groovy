@@ -79,7 +79,6 @@ def methodNoParamClosure(Closure closure) {
 
 // 定义一个方法，接受带参数的闭包
 // 定义方法时，可以只写变量名不写变量类型
-// 方法参数含有闭包对象时，闭包参数对象必须写在参数列表的前面
 def methodWithParamClosure(closure, param) {
     closure(param)
 }
