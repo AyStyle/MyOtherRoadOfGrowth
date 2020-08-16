@@ -1,0 +1,6 @@
+rootProject.name = 'gradle'
+include 'core'
+include 'model'
+include 'admin'
+include 'web'
+

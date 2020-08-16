@@ -1,0 +1,112 @@
+//1. 所有的项目都需要使用Java插件，web项目也需要依赖Java环境
+//2. web子项目需要打为war包
+//3. 统一配置公共属性，例如：group，version
+//4. 统一管理资源库
+//5. 通用依赖配置，例如：logback日志功能引入
+
+// 统一配置信息，包括root项目
+allprojects {
+    // 统一引入java插件和版本指定
+    apply plugin: "java"
+    sourceCompatibility = 1.11
+
+    // 统一配置公共属性
+    group 'ankang.other.learn'
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+    // 配置通用仓库地址
+    // 指定仓库地址，Gradle没有自己的仓库
+    repositories {
+        // 配置多个仓库，Gradle按照仓库顺序从上往下查找
+        mavenLocal()
+        mavenCentral()
+    }
+    // 指定通用依赖
+    dependencies {
+        // test的依赖
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}
+
+// 任务定义的基本语法
+// 演示任务书写
+task t1 {
+    // 给task添加属性
+    ext.myProperty = "this is task property"
+
+    // t1执行之前的操作
+    doFirst {
+        println("before t1")
+
+        // 引用属性
+        println("${myProperty}")
+    }
+
+    println("this is task 1.")
+
+    // t1执行之后的操作
+    doLast {
+        println("after t1")
+
+        // 引用属性
+        println(myProperty)
+    }
+}
+
+// 使用参数添加依赖
+task t2(dependsOn: t1) {
+    // t2执行之前的操作
+    doFirst {
+        println("before t2")
+    }
+
+    println("this is task 2.")
+
+    // t2执行之后的操作
+    doLast {
+        println("after t2")
+    }
+}
+
+task t3 {
+    // 在内部添加依赖
+    dependsOn(t2)
+
+    // t3执行之前的操作
+    doFirst {
+        println("before t3")
+    }
+
+    println("this is task 3.")
+
+    // t3执行之后的操作
+    doLast {
+        println("after t3")
+    }
+}
+
+task t4 {
+    // t4执行之前的操作
+    doFirst {
+        println("before t4")
+    }
+
+    println("this is task 4.")
+
+    // t4执行之后的操作
+    doLast {
+        println("after t4")
+    }
+}
+// 外部添加依赖
+t4.dependsOn(t3)
+
+// 动态任务（了解）
+5.times {
+    time ->
+        task "task_${time}" {
+            println("this is task ${time}.")
+        }
+}

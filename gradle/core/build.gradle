@@ -1,0 +1,29 @@
+plugins{
+    id "maven-publish"
+}
+
+// 发布任务配置
+publishing {
+    // 任务配置
+    publications {
+        // publishProject为自定义名称，可以写多个发布任务
+        publishProject(MavenPublication) {
+            // 发布为jar包
+            from components.java
+            // 发布为war包
+//            from components.war
+        }
+    }
+
+    // 发布位置配置
+    repositories {
+        maven{
+            // 指定要上传maven的私服仓库
+            url = ""
+        }
+    }
+}
+
+dependencies {
+    compile project(":model")
+}
