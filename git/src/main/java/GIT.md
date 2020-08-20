@@ -37,3 +37,5 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |rm|git rm [\<options\>] [--] \<file\>|删除git仓库提交的文件，与--cached命令结合使用可以不删除本地文件|
 |mv|git mv [\<options\>] \<source\>... \<destination\>|修改git仓库文件的名字
 |log|git log [\<options\>] [\<revision-range\>] [[--] \<path\>...]|查看git提交日志，-p 显示详细信息，-n 显示最近n条log，--name-only 只显示文件名，--name-status 显示文件的状态（修改、添加、删除）|
+
+#### 下节课学习13
