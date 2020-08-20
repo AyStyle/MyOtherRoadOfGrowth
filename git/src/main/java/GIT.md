@@ -32,6 +32,8 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |init|git init [\<dir\>]|初始化Git仓库，如果没有path，则：在当前目录初始化|
 |clone|git clone [\<options\>] [--] \<repo\> [\<dir\>]|Clone一个Git仓库，如果没有dir，则：在当前目录下创建一个目录并克隆项目|
 |add|git add [\<options\>] [--] \<pathspec\>|添加需要传入到仓库的文件（标记文件，但不传入到仓库中），不写文件名，则：目录下的全部文件都需要添加到仓库|
-|commit|git commit [\<options\>] [--] \<pathspec\>|将需要传入到仓库的文件传入到仓库（将标记的文件传入到仓库中），不写文件名，则：目录下全部需要添加到仓库的文件被传入到仓库|
+|commit|git commit [\<options\>] [--] \<pathspec\>|将需要传入到仓库的文件传入到仓库（将标记的文件传入到仓库中），不写文件名，则：目录下全部需要添加到仓库的文件被传入到仓库。-m 指定一条提交信息，--amend 修改最新一次提交信息|
 |status|git status [\<options\>] [--] \<pathspec\>|查看仓库的状态，显示文件有没有传入到仓库或需要传入到仓库|
-|rm|git rm [\<options\>] [--] \<file\>|删除git仓库提交的文件（标记删除的文件，仓库中的文件此时还没删除，需要commit才会删除），与--cached命令结合使用可以不删除本地文件|
+|rm|git rm [\<options\>] [--] \<file\>|删除git仓库提交的文件，与--cached命令结合使用可以不删除本地文件|
+|mv|git mv [\<options\>] \<source\>... \<destination\>|修改git仓库文件的名字
+|log|git log [\<options\>] [\<revision-range\>] [[--] \<path\>...]|查看git提交日志，-p 显示详细信息，-n 显示最近n条log，--name-only 只显示文件名，--name-status 显示文件的状态（修改、添加、删除）|
