@@ -43,4 +43,4 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |merge|git merge [\<options\>] [\<commit\>...]|合并分支|
 
 
-#### Git命令别名设置
+#### [该看P18了](https://www.bilibili.com/video/av56582999?p=18)
