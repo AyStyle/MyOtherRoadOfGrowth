@@ -5,6 +5,7 @@
 邮箱：git config --global user.email "your@email.address"
 名字：git config --global user.name "your name" 
 记住密码：git config --global credential.store
+命令别名设置：git config --global alias.<new_cmd> git_cmd
 ```
 
 #### Git目录结构
@@ -37,5 +38,9 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |rm|git rm [\<options\>] [--] \<file\>|删除git仓库提交的文件，与--cached命令结合使用可以不删除本地文件|
 |mv|git mv [\<options\>] \<source\>... \<destination\>|修改git仓库文件的名字
 |log|git log [\<options\>] [\<revision-range\>] [[--] \<path\>...]|查看git提交日志，-p 显示详细信息，-n 显示最近n条log，--name-only 只显示文件名，--name-status 显示文件的状态（修改、添加、删除）|
+|branch|git branch [\<options\>]|创建一个分支，与-d参数结合可以删除分支|
+|checkout|git checkout [\<options\>] \<branch\>|切换分支，与-b一起使用可以创建一个新分支，并切换到该分支下|
+|merge|git merge [\<options\>] [\<commit\>...]|合并分支|
 
-#### 下节课学习13
+
+#### Git命令别名设置
