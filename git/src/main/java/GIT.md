@@ -38,9 +38,22 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |rm|git rm [\<options\>] [--] \<file\>|删除git仓库提交的文件，与--cached命令结合使用可以不删除本地文件|
 |mv|git mv [\<options\>] \<source\>... \<destination\>|修改git仓库文件的名字
 |log|git log [\<options\>] [\<revision-range\>] [[--] \<path\>...]|查看git提交日志，-p 显示详细信息，-n 显示最近n条log，--name-only 只显示文件名，--name-status 显示文件的状态（修改、添加、删除）|
-|branch|git branch [\<options\>]|创建一个分支，与-d参数结合可以删除分支|
+|branch|git branch [\<options\>]|创建一个分支，与-d参数结合可以删除分支，-D强制删除分支（慎用），与--merged和--no-merged配合可以查看哪些分支被合并或者哪些分支未被合并|
 |checkout|git checkout [\<options\>] \<branch\>|切换分支，与-b一起使用可以创建一个新分支，并切换到该分支下|
 |merge|git merge [\<options\>] [\<commit\>...]|合并分支|
 
+#### Git版本冲突
++ 为什么会冲突？
+  ```
+  假设有三个分支：master，subA，subB
+  如果分支subA和subB都修改了同一个文件，那么在mastermerge时就会产生冲突
+  因为此时git不知道该选择使用哪个文件的内容
+  ```
 
-#### [该看P18了](https://www.bilibili.com/video/av56582999?p=18)
++ 如何解决冲突？
+  ```
+  在要merge的分支上（master要merge subA和subB，那么merge分支就是master）
+  修改冲突的文件，然后重新提交即可
+  ```
+
+#### [下一集](https://www.bilibili.com/video/av56582999?p=21)
