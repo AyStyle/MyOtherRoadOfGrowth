@@ -41,6 +41,7 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |branch|git branch [\<options\>]|创建一个分支，与-d参数结合可以删除分支，-D强制删除分支（慎用），与--merged和--no-merged配合可以查看哪些分支被合并或者哪些分支未被合并|
 |checkout|git checkout [\<options\>] \<branch\>|切换分支，与-b一起使用可以创建一个新分支，并切换到该分支下|
 |merge|git merge [\<options\>] [\<commit\>...]|合并分支|
+|stash|git stash [cmd] [\<options\>]|cmd不写，则：创建一个stash，cmd为list，则：列出所有stash，cmd为drop，则：删除stash，cmd为pop（删除）或apply（不删除），则：恢复stash|
 
 #### Git版本冲突
 + 为什么会冲突？
