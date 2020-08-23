@@ -43,8 +43,8 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |merge|git merge [\<options\>] [\<commit\>...]|合并分支|
 |stash|git stash [cmd] [\<options\>]|cmd不写，则：创建一个stash，cmd为list，则：列出所有stash，cmd为drop，则：删除stash，cmd为pop（删除）或apply（不删除），则：恢复stash|
 |tag|git tag [-a &#124; -s &#124; -u \<key-id\>] [-f] [-m \<msg\> &#124; -F \<file\>]|打标签|
-|archive|git archive branch_name|归档分支，--prefix归档文件前缀，--format压缩格式，-o压缩文件名称|
-
+|archive|git archive branch_name|存档，--prefix归档文件前缀，--format压缩格式，-o压缩文件名称|
+|rebase|git rebase master_branch|子分支修改master基点，避免合并冲突，要求：在子分支上执行该语句|
 
 #### Git版本冲突
 + 为什么会冲突？
