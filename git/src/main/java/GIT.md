@@ -42,6 +42,9 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |checkout|git checkout [\<options\>] \<branch\>|切换分支，与-b一起使用可以创建一个新分支，并切换到该分支下|
 |merge|git merge [\<options\>] [\<commit\>...]|合并分支|
 |stash|git stash [cmd] [\<options\>]|cmd不写，则：创建一个stash，cmd为list，则：列出所有stash，cmd为drop，则：删除stash，cmd为pop（删除）或apply（不删除），则：恢复stash|
+|tag|git tag [-a &#124; -s &#124; -u \<key-id\>] [-f] [-m \<msg\> &#124; -F \<file\>]|打标签|
+|archive|git archive branch_name|归档分支，--prefix归档文件前缀，--format压缩格式，-o压缩文件名称|
+
 
 #### Git版本冲突
 + 为什么会冲突？
@@ -57,4 +60,4 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
   修改冲突的文件，然后重新提交即可
   ```
 
-#### [下一集](https://www.bilibili.com/video/av56582999?p=21)
+#### [下一集](https://www.bilibili.com/video/av56582999?p=22)
