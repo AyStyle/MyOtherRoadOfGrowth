@@ -45,6 +45,9 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
 |tag|git tag [-a &#124; -s &#124; -u \<key-id\>] [-f] [-m \<msg\> &#124; -F \<file\>]|打标签|
 |archive|git archive branch_name|存档，--prefix归档文件前缀，--format压缩格式，-o压缩文件名称|
 |rebase|git rebase master_branch|子分支修改master基点，避免合并冲突，要求：在子分支上执行该语句|
+|remote|git remote add <name> <url>|将本地仓库与远程仓库绑定|
+|push|git push [\<options\>] [\<repository\> [\<refspec\>...]]|推送本地仓库的数据到远程仓库|
+|pull|git pull [\<options\>] [\<repository\> [\<refspec\>...]]|从远程仓库拉取数据到本地仓库|
 
 #### Git版本冲突
 + 为什么会冲突？
@@ -60,4 +63,4 @@ xx.xx配置的文件是在所有目录下都生效的，包括递归子目录
   修改冲突的文件，然后重新提交即可
   ```
 
-#### [下一集](https://www.bilibili.com/video/av56582999?p=22)
+#### [下一集](https://www.bilibili.com/video/av56582999?p=30) 
