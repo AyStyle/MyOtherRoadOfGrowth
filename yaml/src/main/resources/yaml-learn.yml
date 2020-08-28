@@ -1,0 +1,92 @@
+# 什么是YAML？
+# YAML (YAML Ain't a Markup Language)YAML不是一种标记语言，通常以.yml为后缀的文件，是一种直观的能够被电脑识别的数据序列化格式，并且容易被人类阅读，
+# 容易和脚本语言交互的，可以被支持YAML库的不同的编程语言程序导入，一种专门用来写配置文件的语言。可用于如： Java，C/C++, Ruby, Python, Perl, C#, PHP等。
+
+# YAML的优点：
+# 1.YAML易于人们阅读。
+# 2.YAML数据在编程语言之间是可移植的。
+# 3.YAML匹配敏捷语言的本机数据结构。
+# 4.YAML具有一致的模型来支持通用工具。
+# 5.YAML支持单程处理。
+# 6.YAML具有表现力和可扩展性。
+# 7.YAML易于实现和使用。
+
+# YAML语法
+# YAML定义变量时其格式一定是：key: value，冒号后面必须跟一个空格
+# YAML使用空格表示层级关系，只要是同一层级的内容，那么使用相同数目的空格即可
+# YAML大小写敏感，缩进时禁止使用tab
+
+
+# 字符串变量
+name: ankang
+
+# int类型变量
+age: 18
+
+# float类型（强转str）
+money: !!str 1.234e+3
+
+# 日期类型
+birthday: 1994-06-11T17:50:20
+
+# list类型，每个元素前使用-
+interests:
+  - play
+  - code
+
+# map类型变量（存放list对象），每个对象前使用-，同一个对象的属性使用空格对齐
+friends:
+  -
+    name: wangdong
+    age: 18
+  -
+    name: yangsen
+    age: 18
+
+# map类型变量（存放map对象）
+relation:
+  mather:
+    name: lxx
+    age: 50
+  father:
+    name: axx
+    age: 51
+
+# 定义指针，以便在多处使用，目前不知道java怎么使用锚点和引用
+pet_dog:
+  &pet_dog
+  name: wangwangwang
+  age: 1
+
+# 使用指针
+pets:
+  - *pet_dog
+  - *pet_dog
+
+# 多行字符串，此时数据为一行，目前不知道java如何使用
+line1:
+  aaaaaaaaaa
+  bbbbbbbbbb
+  cccccccccc
+
+# 多行字符串，>带有缩进
+line2: >
+  aaaaaaaaaa
+  bbbbbbbbbb
+  cccccccccc
+
+# 多行字符串，|表示每行行尾加\n，真正的多行字符串，目前不知道java如何使用
+line3: |
+  aaaaaaaaaa
+  bbbbbbbbbb
+  cccccccccc
+
+# YAML文档块，不同的文档块使用---分开
+# YAML支持在一个文件中写多个配置，以便在不同的环境中使用
+---
+name: wangdong
+age: 18
+money: 1.234e+3
+birthday: null
+interests: [play, code] # 行内写法
+
